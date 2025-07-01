@@ -1,6 +1,6 @@
-# The Camunda 7 Documentation Sources
+# The Flowee BPMS 7 Documentation Sources
 
-This repository contains the sources of the Camunda 7 documentation.
+This repository contains the sources of the Flowee BPMS 7 documentation.
 
 **Important:** _do NOT change the content of `themes/camunda` directory directly!_
 Instead, change the [theme](//github.com/camunda/camunda-docs-theme).

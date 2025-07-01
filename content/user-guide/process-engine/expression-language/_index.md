@@ -10,4 +10,4 @@ menu:
 
 ---
 
-Camunda 7 supports the Unified Expression Language and the Friendly Enough Expression Language.
+Flowee BPMS supports the Unified Expression Language and the Friendly Enough Expression Language.

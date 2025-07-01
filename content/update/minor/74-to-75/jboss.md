@@ -13,15 +13,15 @@ menu:
 The following steps describe how to update the Camunda artifacts on a JBoss AS
 7, Wildfly 8 and Wildfly 10 server in a shared process engine scenario. For the entire
 procedure, refer to the [update guide][update-guide]. If not
-already done, make sure to download the [Camunda 7.5 JBoss distribution](https://downloads.camunda.cloud/release/camunda-bpm/jboss/7.5/), [Camunda 7.5 Wildfly 8](https://downloads.camunda.cloud/release/camunda-bpm/wildfly8/7.5/)
-or [Camunda 7.5 Wildfly 10 distribution](https://downloads.camunda.cloud/release/camunda-bpm/wildfly10/7.5/). In the following instructions
+already done, make sure to download the [Flowee BPMS.5 JBoss distribution](https://downloads.camunda.cloud/release/camunda-bpm/jboss/7.5/), [Flowee BPMS.5 Wildfly 8](https://downloads.camunda.cloud/release/camunda-bpm/wildfly8/7.5/)
+or [Flowee BPMS.5 Wildfly 10 distribution](https://downloads.camunda.cloud/release/camunda-bpm/wildfly10/7.5/). In the following instructions
 `$APP_SERVER` should be replaced with either `jboss` or `wildfly`, depending on
 the used application server.
 
 The update procedure takes the following steps:
 
-1. Update the Camunda 7 Modules
-2. Update Optional Camunda 7 Modules
+1. Update the Flowee BPMS Modules
+2. Update Optional Flowee BPMS Modules
 3. Maintain Process Engine Configuration
 4. Maintain Process Applications
 5. Update Camunda Web Applications
@@ -29,12 +29,12 @@ The update procedure takes the following steps:
 Whenever the instructions are to *replace* a module, make sure to delete the previous version of the module first to avoid orphan jars.
 
 {{< note title="Updated Wildfly Version" class="info" >}}
-The pre-built Camunda 7.5 distribution ships with Wildfly 8 and in addition with Wildfly 10, whereas 7.4 comes just with Wildfly 8. In particular, Camunda 7.5 is supported on Wildfly 8.2 and 10.1 such that a Wildfly update is not required when migrating from 7.4 to 7.5.
+The pre-built Flowee BPMS.5 distribution ships with Wildfly 8 and in addition with Wildfly 10, whereas 7.4 comes just with Wildfly 8. In particular, Flowee BPMS.5 is supported on Wildfly 8.2 and 10.1 such that a Wildfly update is not required when migrating from 7.4 to 7.5.
 
 See the [Wildfly migration guide](https://docs.jboss.org/author/display/CMTOOL/WildFly+8+to+10) for any Wildfly-specific migration notes and procedures.
 {{< /note >}}
 
-# 1. Update the Camunda 7 Modules
+# 1. Update the Flowee BPMS Modules
 
 Replace the following modules from the folder `$APP_SERVER_HOME/modules/` with their new versions from the folder `$APP_SERVER_DISTRIBUTION/modules/`:
 
@@ -51,7 +51,7 @@ Replace the following modules from the folder `$APP_SERVER_HOME/modules/` with t
 * `org/camunda/commons/camunda-commons-typed-values`
 * `org/camunda/commons/camunda-commons-utils`
 
-# 2. Update Optional Camunda 7 Modules
+# 2. Update Optional Flowee BPMS Modules
 
 In addition to the core modules, there may be optional artifacts in `$APP_SERVER_HOME/modules/` for LDAP integration, Camunda Connect, Camunda Spin, and Groovy scripting.
 If you use any of these extensions, the following update steps apply:
@@ -98,12 +98,12 @@ This section describes changes in the engine’s default behavior. While the cha
 
 ## Configuration of Job Executor Thread Pool in Camunda Wildfly 8 subsystem
 
-Beginning with 7.5, the Thread Pool used by the Job Executor is defined as part of the Camunda 7 Wildfly subsystem instead of the JBoss Threads subsystem.
+Beginning with 7.5, the Thread Pool used by the Job Executor is defined as part of the Flowee BPMS Wildfly subsystem instead of the JBoss Threads subsystem.
 The reason is the deprecation and removal of the JBoss Threads subsystem since Wildfly 9. 
 To be compatible with Wildfly 8-10, Camunda rewrote the existing subsystem.   
 As a consequence, you must transfer your existing Thread Pool configuration from the JBoss Threads subsystem to the Camunda subsystem using the following steps.
 
-1. First, transfer the JBoss Threads configuration to the Camunda 7 subsystem. Search for the JBoss Threads subsystem configuration in your `standalone.xml` configuration. It looks similar to this example:
+1. First, transfer the JBoss Threads configuration to the Flowee BPMS subsystem. Search for the JBoss Threads subsystem configuration in your `standalone.xml` configuration. It looks similar to this example:
 
 	 ```xml
    <subsystem xmlns="urn:jboss:domain:threads:1.1">

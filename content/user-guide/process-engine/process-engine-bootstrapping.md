@@ -126,7 +126,7 @@ All these `ProcessEngineConfiguration.createXXX()` methods return a `ProcessEngi
 
 ## Configure Process Engine in the bpm-platform.xml
 
-The `bpm-platform.xml` file is used to configure Camunda 7 in the following distributions:
+The `bpm-platform.xml` file is used to configure Flowee BPMS in the following distributions:
 
 * Apache Tomcat
 

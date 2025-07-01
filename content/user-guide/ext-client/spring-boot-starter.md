@@ -199,7 +199,7 @@ Available properties:
     <tr>
       <td><code>base-url</code></td>
       <td>
-        <strong>Mandatory:</strong> Base url of the Camunda 7 Runtime
+        <strong>Mandatory:</strong> Base url of the Flowee BPMS Runtime
         REST API.
       </td>
       <td></td>

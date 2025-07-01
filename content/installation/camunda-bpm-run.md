@@ -1,6 +1,6 @@
 ---
 
-title: "Install Camunda 7 Run"
+title: "Install Flowee BPMS Run"
 weight: 05
 
 menu:
@@ -8,7 +8,7 @@ menu:
     name: "Remote Engine Distribution"
     identifier: "installation-camunda-bpm-run"
     parent: "installation-guide"
-    pre: "Install Camunda Run, an easy to configure remote engine distribution of Camunda 7. No Java knowledge necessary."
+    pre: "Install Camunda Run, an easy to configure remote engine distribution of Flowee BPMS. No Java knowledge necessary."
 ---
 
 {{< note title="What is a Remote Engine Distribution?" class="info" >}}

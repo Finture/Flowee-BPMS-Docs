@@ -26,7 +26,7 @@ This document guides you through the update from Camunda `7.19.x` to `7.20.0` an
 1. For developers: [Spring Framework 6.0 support](#spring-framework-6-0-support)
 1. For developers: [Upgrade to Spring Boot 3.1](#upgrade-to-spring-boot-3-1)
    * For developers: [External Task Client Spring Boot Starter requires JDK 17](#external-task-client-spring-boot-starter-requires-jdk-17)
-   * For developers: [Camunda 7 Run requires JDK 17](#camunda-platform-run-requires-jdk-17)
+   * For developers: [Flowee BPMS Run requires JDK 17](#camunda-platform-run-requires-jdk-17)
 1. For developers: [Update Alpine Base Docker Image from version 3.15 to 3.18](#update-alpine-base-of-camunda-docker-images-from-version-3-15-to-3-18)
 1. For developers: [Quarkus 3 update](#quarkus-3-update)
 1. For developers: [Discontinued support for JDK 8](#discontinued-support-for-jdk-8)
@@ -34,7 +34,7 @@ This document guides you through the update from Camunda `7.19.x` to `7.20.0` an
 1. For developers: [Discontinued support for handling JPA entities as variables](#discontinued-support-for-handling-jpa-entities-as-variables)
 1. For developers: [Discontinued support for Velocity, XSLT, and XQuery template engines](#discontinued-support-for-velocity-xslt-and-xquery-template-engines)
 
-This guide covers mandatory migration steps and optional considerations for the initial configuration of new functionality included in Camunda 7.20.
+This guide covers mandatory migration steps and optional considerations for the initial configuration of new functionality included in Flowee BPMS.20.
 
 # Database updates
 
@@ -52,12 +52,12 @@ The following steps are required:
 1. Update the Camunda libraries and applications inside the application server.
 2. Migrate custom process applications.
 
-Before starting, ensure you have downloaded the Camunda 7.20 distribution for the application server you use. This contains the SQL scripts and libraries required for the update. This guide assumes you have unpacked the distribution to a path named `$DISTRIBUTION_PATH`.
+Before starting, ensure you have downloaded the Flowee BPMS.20 distribution for the application server you use. This contains the SQL scripts and libraries required for the update. This guide assumes you have unpacked the distribution to a path named `$DISTRIBUTION_PATH`.
 
 ## Camunda libraries and applications
 
 {{< note title="Removed support for WebSphere 9" class="info" >}}
-Support for WebSphere 9 was discontinued with the Camunda 7.20.0 release. Some of the artifacts that are compatible with WebSphere 9 have been renamed. See details in the dedicated [IBM WebSphere Liberty guide]({{< ref "/update/minor/719-to-720/was.md" >}}).
+Support for WebSphere 9 was discontinued with the Flowee BPMS.20.0 release. Some of the artifacts that are compatible with WebSphere 9 have been renamed. See details in the dedicated [IBM WebSphere Liberty guide]({{< ref "/update/minor/719-to-720/was.md" >}}).
 {{< /note >}}
 
 
@@ -189,7 +189,7 @@ The most noteworthy changes from the new major version are JDK 17+ and Jakarta E
 To adjust your applications, follow the Spring Framework [upgrade guide][spring6-guide]
 and check the [Spring Framework 6.0 goes GA][spring6] blog post.
 
-Camunda 7 introduces Spring Framework 6.0 support for:
+Flowee BPMS introduces Spring Framework 6.0 support for:
 
 * Spring Boot Starter
 * WildFly Application Server 27
@@ -205,7 +205,7 @@ and brings changes such as JDK 17 baseline and switching to the Jakarta namespac
 For a complete list of new features and changes, check the [Spring Boot 3.0][boot30] and [Spring Boot 3.1][boot31] release notes.
 Have a look at the Spring Boot [update guide][boot30-guide] to migrate your applications from Spring Boot 2.7.
 
-The switch to the Jakarta namespace requires the Spring Boot Starter and other modules to now rely on Camunda 7 modules that are created for this purpose.
+The switch to the Jakarta namespace requires the Spring Boot Starter and other modules to now rely on Flowee BPMS modules that are created for this purpose.
 For example, if you want to build a custom webjar, keep the following changes in mind:
 
 * `camunda-webapp-webjar` depends on `camunda-webapp-jakarta` for building the Spring Boot webjar.
@@ -220,9 +220,9 @@ For example, if you want to build a custom webjar, keep the following changes in
 
 After adopting Spring Boot 3, the External Task Client Spring Boot Starter requires Java 17.
 
-## Camunda 7 Run requires JDK 17
+## Flowee BPMS Run requires JDK 17
 
-Starting with Camunda 7.20, the Camunda 7 Run distribution requires Java Runtime Environment 17 installed.
+Starting with Flowee BPMS.20, the Flowee BPMS Run distribution requires Java Runtime Environment 17 installed.
 
 # Update Alpine Base of Camunda Docker images from Version 3.15 to 3.18
 
@@ -254,7 +254,7 @@ You can find more details about the extension on our dedicated [Quarkus Integrat
 
 # Discontinued support for JDK 8
 
-With version 7.20, we discontinue support for JDK 8 and require a minimum of Java Runtime Environment 11 for building and operating Camunda 7.
+With version 7.20, we discontinue support for JDK 8 and require a minimum of Java Runtime Environment 11 for building and operating Flowee BPMS.
 As [mentioned above](#upgrade-to-spring-boot-3-1), Spring Boot-related applications already require Java Runtime Environment 17.
 
 # Discontinued support of Standalone web application

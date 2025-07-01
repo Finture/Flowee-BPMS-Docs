@@ -23,7 +23,7 @@ This document guides you through the update from Camunda `7.22.x` to `7.23.0` an
 1. For developers: [Spring Framework Upgrade (changes required when using Java 11)](#spring-framework-upgrade-changes-required-when-using-java-11)
 1. For developers: [Quarkus 3.20 Extension Update](#quarkus-3-20-extension-update)
 
-This guide covers mandatory migration steps and optional considerations for the initial configuration of new functionality included in Camunda 7.23.
+This guide covers mandatory migration steps and optional considerations for the initial configuration of new functionality included in Flowee BPMS.23.
 
 # Database updates
 
@@ -41,11 +41,11 @@ The following steps are required:
 1. Update the Camunda libraries and applications inside the application server.
 2. Migrate custom process applications.
 
-Before starting, ensure you have downloaded the Camunda 7.23 distribution for the application server you use. This contains the SQL scripts and libraries required for the update. This guide assumes you have unpacked the distribution to a path named `$DISTRIBUTION_PATH`.
+Before starting, ensure you have downloaded the Flowee BPMS.23 distribution for the application server you use. This contains the SQL scripts and libraries required for the update. This guide assumes you have unpacked the distribution to a path named `$DISTRIBUTION_PATH`.
 
 # Bootstrap NES and AngularJS NES by HeroDevs, Inc.
 
-Camunda 7.23 replaces the following libraries with versions of Bootstrap NES and AngularJS NES by HeroDevs, Inc.:
+Flowee BPMS.23 replaces the following libraries with versions of Bootstrap NES and AngularJS NES by HeroDevs, Inc.:
 
 * *AngularJS* (technical names: `angular`, `angular-animate`, `angular-cookies`, `angular-loader`, `angular-mocks`, `angular-resource`, `angular-route`, `angular-sanitize`, `angular-touch`)
 *  *angular-ui-bootstrap*

@@ -11,7 +11,7 @@ menu:
 ---
 
 
-Camunda 7 supports scripting with JSR-223 compatible script engine implementations. Currently we
+Flowee BPMS supports scripting with JSR-223 compatible script engine implementations. Currently we
 test the integration for Groovy, JavaScript, JRuby and Jython. To use a scripting engine
 it is necessary to add the corresponding jar to the classpath.
 
@@ -113,7 +113,7 @@ runtimeService.startProcessInstanceByKey("process", variables);
 
 # Use Scripts as Execution Listeners
 
-Besides Java code and expression language, Camunda 7 also supports the execution of a script
+Besides Java code and expression language, Flowee BPMS also supports the execution of a script
 as an execution listener. For general information about execution listeners see the corresponding
 [section]({{< ref "/user-guide/process-engine/delegation-code.md#execution-listener" >}}).
 
@@ -184,7 +184,7 @@ The following example shows usage of scripts as task listeners.
 
 # Use Scripts as Conditions
 
-As an alternative to expression language, Camunda 7 allows you to use scripts as
+As an alternative to expression language, Flowee BPMS allows you to use scripts as
 `conditionExpression` of conditional sequence flows. To do that, the `language` attribute of the
 `conditionExpression` element has to be set to the desired scripting language. The script source code
 is the text content of the element, as with expression language. Another way to specify the script
@@ -475,7 +475,7 @@ Camunda's Java API provides access to Camunda's process engine services; these s
 
 {{< javadocref page="org/camunda/bpm/engine/ProcessEngineServices.html" text="Process Engine Services" >}} \
 
-{{< javadocref page="org/camunda/bpm/engine/package-summary.html" text="Public Java API of Camunda 7 Engine" >}}
+{{< javadocref page="org/camunda/bpm/engine/package-summary.html" text="Public Java API of Flowee BPMS Engine" >}}
 
 Example of creating a BPMN Message that correlates with the message key "work":
 
@@ -507,7 +507,7 @@ system.out.println('This prints to the console');
 # Script Source
 
 The standard way to specify the script source code in the BPMN XML model is to add it directly to
-the XML file. Nonetheless, Camunda 7 provides additional ways to specify the script source.
+the XML file. Nonetheless, Flowee BPMS provides additional ways to specify the script source.
 
 If you use another scripting language than Expression Language, you can also specify the script
 source as an expression which returns the source code to be executed. This way, the source code can,

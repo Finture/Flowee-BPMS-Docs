@@ -310,7 +310,7 @@ The same problems can occur by using a custom output variable mapping since
 `DmnDecisionResult` has methods that return the same collections as the
 predefined mappers. Additionally, it is not recommended to save a
 `DmnDecisionResult` or a `DmnDecisionResultEntries` as process/case variable because
-the underlying implementation can change in a new version of Camunda 7.
+the underlying implementation can change in a new version of Flowee BPMS.
 
 To prevent any of these problems, you should use primitive variables only.
 Alternatively, you can use a custom object for serialization that you control
@@ -371,8 +371,8 @@ information about expression languages.
 
 ## Accessing Beans
 
-If the DMN engine is invoked by Camunda 7, it uses the same
-JUEL configuration as the Camunda 7 engine. Therefore, it is also
+If the DMN engine is invoked by Flowee BPMS, it uses the same
+JUEL configuration as the Flowee BPMS engine. Therefore, it is also
 possible to access Spring and CDI Beans from JUEL expressions in decisions. 
 For more information on this integration, please see the corresponding
 section in the [Spring] and [CDI] guides.

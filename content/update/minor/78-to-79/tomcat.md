@@ -12,19 +12,19 @@ menu:
 
 The following steps describe how to update the Camunda artifacts on a Tomcat server in a shared process engine setting. 
 For the entire procedure, refer to the [update guide][update-guide]. If not already done, make sure to download the 
-[Camunda 7.9 Tomcat distribution][tomcat-distribution].
+[Flowee BPMS.9 Tomcat distribution][tomcat-distribution].
 
 The update procedure takes the following steps:
 
-1. Update the Camunda 7 Core Libraries
-2. Update Optional Camunda 7 Libraries
+1. Update the Flowee BPMS Core Libraries
+2. Update Optional Flowee BPMS Libraries
 3. Maintain Process Applications
 4. Update Web Applications
 
 In each of the following steps, the identifier `$*_VERSION` refers to the current versions and the new versions of the artifacts.
 
 {{< note title="Updated Tomcat Version" class="info" >}}
-The pre-built Camunda 7.9 distribution ships with Tomcat 9.0.5, whereas 7.8 comes with Tomcat 8.0.47. Camunda 7.9 is 
+The pre-built Flowee BPMS.9 distribution ships with Tomcat 9.0.5, whereas 7.8 comes with Tomcat 8.0.47. Flowee BPMS.9 is 
 supported on all Tomcat 6/7/8/9 versions such that a Tomcat update is not required when migrating from 7.8 to 7.9.
 
 Should you want to update Tomcat along with Camunda, perform the following steps either before or after updating Camunda:
@@ -34,7 +34,7 @@ Should you want to update Tomcat along with Camunda, perform the following steps
 * Undeploy all process applications and copy them to the new Tomcat server's directory for redeployment.
 {{< /note >}}
 
-# 1. Update the Camunda 7 Core Libraries
+# 1. Update the Flowee BPMS Core Libraries
 
 Replace the following libraries in the folder `$TOMCAT_HOME/lib/` with their new versions from the folder `$TOMCAT_DISTRIBUTION/lib/`:
 
@@ -50,7 +50,7 @@ Replace the following libraries in the folder `$TOMCAT_HOME/lib/` with their new
 * `camunda-commons-typed-values-$COMMONS_VERSION.jar`
 * `camunda-commons-utils-$COMMONS_VERSION.jar`
 
-# 2. Update Optional Camunda 7 Libraries
+# 2. Update Optional Flowee BPMS Libraries
 
 In addition to the core libraries, there may be optional artifacts in `$TOMCAT_HOME/lib/` for LDAP integration, Camunda Connect, Camunda Spin, and Groovy scripting. If you use any of these extensions, the following update steps apply:
 

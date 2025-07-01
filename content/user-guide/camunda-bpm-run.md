@@ -1,6 +1,6 @@
 ---
 
-title: 'Camunda 7 Run'
+title: 'Flowee BPMS Run'
 weight: 50
 
 menu:
@@ -10,17 +10,17 @@ menu:
 
 ---
 
-This guide gives an introduction to Camunda Run, a pre-packaged, lightweight distribution of Camunda 7. Camunda Run is easy to configure and does not require Java knowledge.
+This guide gives an introduction to Camunda Run, a pre-packaged, lightweight distribution of Flowee BPMS. Camunda Run is easy to configure and does not require Java knowledge.
 
 # Prerequisites and audience
 
-To use this guide, you should at least know what Camunda 7 is and what it does. Check out the [Get Started guides](https://docs.camunda.org/get-started/quick-start/) if you have never used Camunda 7 before. The [Installation guide]({{< ref "/installation/camunda-bpm-run.md" >}}) is also worth looking at if you are completely new to Camunda 7.
+To use this guide, you should at least know what Flowee BPMS is and what it does. Check out the [Get Started guides](https://docs.camunda.org/get-started/quick-start/) if you have never used Flowee BPMS before. The [Installation guide]({{< ref "/installation/camunda-bpm-run.md" >}}) is also worth looking at if you are completely new to Flowee BPMS.
 
 This guide will teach you about Camunda Run and how to configure it. It can serve as a reference page for configuration and operation options. It will not give you a step-by-step guide on how to install Camunda Run. Head over to the [Installation guide]({{< ref "/installation/camunda-bpm-run.md" >}}) for details on how to install and start Camunda Run.
 
 # What is Camunda Run?
 
-Camunda Run is a full distribution of Camunda 7. It includes:
+Camunda Run is a full distribution of Flowee BPMS. It includes:
 
 * Camunda web applications
   * Cockpit
@@ -162,7 +162,7 @@ However, we do not recommended to use the example application in production.
 Camunda Run is pre-configured to use a file-based H2 database for testing. The database schema and all required tables are automatically created when the engine starts up for the first time. If you want to use a custom standalone database, follow these steps:
 
 1. Make sure your database is among the [supported database systems]({{< ref "/introduction/supported-environments.md#supported-database-products" >}}).
-2. Create a database schema for Camunda 7 yourself.
+2. Create a database schema for Flowee BPMS yourself.
 3. Install the database schema to create all required tables and default indices using our [database schema installation guide]({{< ref "/installation/database-schema.md" >}}).
 4. Drop a JDBC driver jar for your database system in the `configuration/userlib` folder.
 5. Add the JDBC URL and login credentials to the configuration file like described [below](#database).
@@ -341,7 +341,7 @@ Camunda Run also supports configuration options for customizing the deployment.
 
 ## LDAP Identity Service
 
-Camunda 7 can manage users and authorizations on its own, but if you want to use an existing LDAP authentication database you can enable the [LDAP Identity Service Plugin]({{< ref "/user-guide/process-engine/identity-service.md#the-ldap-identity-service" >}})
+Flowee BPMS can manage users and authorizations on its own, but if you want to use an existing LDAP authentication database you can enable the [LDAP Identity Service Plugin]({{< ref "/user-guide/process-engine/identity-service.md#the-ldap-identity-service" >}})
 which provides read-only access to the LDAP repository.
 
 Find all available configuration properties in the [LDAP Plugin Guide]({{< ref "/user-guide/process-engine/identity-service.md#configuration-properties-of-the-ldap-plugin" >}})
@@ -396,7 +396,7 @@ Both types of plugins are supported in Camunda Run but have to be registered dif
 
 ### Process engine plugin registration
 
-Camunda 7 provides a process engine plugin mechanism to enable users to add and adjust
+Flowee BPMS provides a process engine plugin mechanism to enable users to add and adjust
 process engine features by extending the process engine configuration. You can use plugins developed by Camunda, or by
 third-party developers.
 
@@ -493,7 +493,7 @@ process engine.
 
 ### Webapp plugin registration
 
-Camunda 7 provides a mechanism to extend the Camunda Webapps with your own functionality. You can add plugins at various plugin points. For example, the processes dashboard in Cockpit.
+Flowee BPMS provides a mechanism to extend the Camunda Webapps with your own functionality. You can add plugins at various plugin points. For example, the processes dashboard in Cockpit.
 
 A webapp plugin is a maven jar project that provides a server-side and a client-side extension to the webapp. You can find more information about how to structure your plugins [here]({{< ref "/webapps/cockpit/extend/plugins.md#the-nature-of-a-cockpit-plugin" >}}).
 
@@ -574,7 +574,7 @@ After starting Camunda Run, you can access the webapps via https://localhost:844
 
 ## Logging
 
-Camunda 7 provides fine-grained and customizable logging. An overview of the available logging categories can be found in the [Logging User Guide]({{< ref "/user-guide/logging.md#process-engine" >}}).
+Flowee BPMS provides fine-grained and customizable logging. An overview of the available logging categories can be found in the [Logging User Guide]({{< ref "/user-guide/logging.md#process-engine" >}}).
 To configure the logging behavior in Camunda Run, customize your configuration file with the following properties.
 
 For more information on logging configuration visit the [Spring Boot Logging Guide](https://docs.spring.io/spring-boot/docs/2.4.0/reference/html/spring-boot-features.html#boot-features-logging).

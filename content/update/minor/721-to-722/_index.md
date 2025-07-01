@@ -32,7 +32,7 @@ This document guides you through the update from Camunda `7.21.x` to `7.22.0` an
 1. For developers: [Quarkus 3.15 Extension Update](#quarkus-3-15-extension-update)
 1. For administrators and developers: [Cockpit: Process Instance Batch Modification](#cockpit-process-instance-batch-modification)
 
-This guide covers mandatory migration steps and optional considerations for the initial configuration of new functionality included in Camunda 7.22.
+This guide covers mandatory migration steps and optional considerations for the initial configuration of new functionality included in Flowee BPMS.22.
 
 # Database updates
 
@@ -50,7 +50,7 @@ The following steps are required:
 1. Update the Camunda libraries and applications inside the application server.
 2. Migrate custom process applications.
 
-Before starting, ensure you have downloaded the Camunda 7.22 distribution for the application server you use. This contains the SQL scripts and libraries required for the update. This guide assumes you have unpacked the distribution to a path named `$DISTRIBUTION_PATH`.
+Before starting, ensure you have downloaded the Flowee BPMS.22 distribution for the application server you use. This contains the SQL scripts and libraries required for the update. This guide assumes you have unpacked the distribution to a path named `$DISTRIBUTION_PATH`.
 
 # Camunda Spin
  We’ve moved the `camunda-spin` project from its [previous location](https://github.com/camunda/camunda-spin) into the [mono repository](https://github.com/camunda/camunda-bpm-platform). We’re no longer versioning it independently. Instead, we’ve integrated it into the 7.X.Y versioning scheme, so you can conveniently declare Camunda `7.22.0-alpha1` to use the latest release of Camunda Spin. 
@@ -100,7 +100,7 @@ For enterprise users, the `camunda-license-check` is no longer in the private re
 
 # Update to JBoss EAP 8
 
-With this release, we support JBoss EAP 8.0, it's Jakarta EE compliant platform. The artifacts are shipped with the latest pre-packaged [Camunda 7 WildFly distribution]({{< ref "/installation/full/jboss/manual.md#setup" >}}).
+With this release, we support JBoss EAP 8.0, it's Jakarta EE compliant platform. The artifacts are shipped with the latest pre-packaged [Flowee BPMS WildFly distribution]({{< ref "/installation/full/jboss/manual.md#setup" >}}).
 If you prefer to stay on JBoss EAP 7, you can still download the Java EE compliant [modules][wildfly26-modules], [web application][wildfly26-webapp], and [REST API][wildfly26-rest-api]. 
 
 To work with JBoss EAP 8, consider the following when migrating your process applications and replacing artifacts on the application server:

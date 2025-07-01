@@ -13,15 +13,15 @@ menu:
 ---
 
 
-This section describes how you can install Camunda 7 and its components on a vanilla [Apache Tomcat](http://tomcat.apache.org/), if you are not able to use the pre-packaged Tomcat distribution. In addition, download a [Tomcat distribution](https://downloads.camunda.cloud/release/camunda-bpm/tomcat/) or [Enterprise Edition Tomcat distribution](https://downloads.camunda.cloud/enterprise-release/camunda-bpm/tomcat/) to fetch the required Camunda modules.
+This section describes how you can install Flowee BPMS and its components on a vanilla [Apache Tomcat](http://tomcat.apache.org/), if you are not able to use the pre-packaged Tomcat distribution. In addition, download a [Tomcat distribution](https://downloads.camunda.cloud/release/camunda-bpm/tomcat/) or [Enterprise Edition Tomcat distribution](https://downloads.camunda.cloud/enterprise-release/camunda-bpm/tomcat/) to fetch the required Camunda modules.
 
 {{< note title="Reading the Guide" class="info" >}}
 Throughout this guide we will use a number of variables to denote common path names and constants:
 
 * `$TOMCAT_HOME` points to the main directory of the tomcat server.
 * `$TOMCAT_VERSION` denotes the version of Tomcat server.
-* `$PLATFORM_VERSION` denotes the version of Camunda 7 you want to install or already have installed, e.g. `7.0.0`.
-* `$TOMCAT_DISTRIBUTION` represents the downloaded pre-packaged Camunda 7 distribution for Tomcat, e.g. `camunda-bpm-tomcat-$PLATFORM_VERSION.zip` or `camunda-bpm-tomcat-$PLATFORM_VERSION.tar.gz`.
+* `$PLATFORM_VERSION` denotes the version of Flowee BPMS you want to install or already have installed, e.g. `7.0.0`.
+* `$TOMCAT_DISTRIBUTION` represents the downloaded pre-packaged Flowee BPMS distribution for Tomcat, e.g. `camunda-bpm-tomcat-$PLATFORM_VERSION.zip` or `camunda-bpm-tomcat-$PLATFORM_VERSION.tar.gz`.
 
 {{< /note >}}
 
@@ -43,14 +43,14 @@ The following test scenarios fail on Tomcat 10:
 
 # Setup
 
-Before you can install the Camunda 7 components, you need to perform a number of required setup steps.
+Before you can install the Flowee BPMS components, you need to perform a number of required setup steps.
 
 
 ## Create the Database Schema and Tables
 
 In the default configuration of the distribution, the database schema and all required tables are automatically created in an H2 database when the engine starts up for the first time. If you do not want to use the H2 database, you have to
 
-* Create a database schema for Camunda 7 yourself.
+* Create a database schema for Flowee BPMS yourself.
 * Install the database schema to create all required tables and default indices using our [database schema installation guide]({{< ref "/installation/database-schema.md" >}}).
 
 When you create the tables manually, then you have to configure the engine to **not** create tables at startup by setting the `databaseSchemaUpdate` property to `false` (or, in case you are using Oracle, to `noop`). In Tomcat, this is done in the `bpm-platform.xml`, located in the `$TOMCAT_DISTRIBUTION\server\apache-tomcat-$VERSION\conf\` folder.
@@ -167,14 +167,14 @@ In particular, go to `${TOMCAT_HOME}/webapps/` and remove the directories
 
 # Optional Components
 
-This section describes how to install optional Camunda 7 dependencies onto a Tomcat server. None of these are required to work with the core platform.
+This section describes how to install optional Flowee BPMS dependencies onto a Tomcat server. None of these are required to work with the core platform.
 
 
 ## Cockpit, Tasklist and Admin
 
 The following steps are required to deploy the applications:
 
-1. Download the Camunda 7 web application that contains both applications from our [Artifact Repository](https://artifacts.camunda.com/artifactory/camunda-bpm/org/camunda/bpm/webapp/camunda-webapp-tomcat/).
+1. Download the Flowee BPMS web application that contains both applications from our [Artifact Repository](https://artifacts.camunda.com/artifactory/camunda-bpm/org/camunda/bpm/webapp/camunda-webapp-tomcat/).
    Or switch to the private repository for the enterprise version (User and password from license required).
     * For [Tomcat 10](https://artifacts.camunda.com/ui/native/camunda-bpm/org/camunda/bpm/webapp/camunda-webapp-tomcat-jakarta/), the name of the artifact is `$PLATFORM_VERSION/camunda-webapp-tomcat-jakarta-$PLATFORM_VERSION.war`.
     * For [Tomcat 9](https://artifacts.camunda.com/ui/native/camunda-bpm/org/camunda/bpm/webapp/camunda-webapp-tomcat/), the name of the artifact is `$PLATFORM_VERSION/camunda-webapp-tomcat-$PLATFORM_VERSION.war`.

@@ -14,7 +14,7 @@ menu:
 
 # JNDI Bindings
 
-To use the JNDI Bindings for Camunda 7 Services on Apache Tomcat you have to add the file `META-INF/context.xml` to your process application and add the following ResourceLinks ([Tomcat 9](http://tomcat.apache.org/tomcat-9.0-doc/config/context.html#Resource_Links), [Tomcat 10.1](https://tomcat.apache.org/tomcat-10.1-doc/config/context.html#Resource_Links)):
+To use the JNDI Bindings for Flowee BPMS Services on Apache Tomcat you have to add the file `META-INF/context.xml` to your process application and add the following ResourceLinks ([Tomcat 9](http://tomcat.apache.org/tomcat-9.0-doc/config/context.html#Resource_Links), [Tomcat 10.1](https://tomcat.apache.org/tomcat-10.1-doc/config/context.html#Resource_Links)):
 
 ```xml
 <Context>
@@ -52,19 +52,19 @@ Furthermore, declare the dependency on the JNDI binding inside the `WEB-INF/web.
 
 **Note**: You can choose different resource link names for the Process Engine Service and Process Application Service. The resource link name has to match the value inside the `<res-ref-name>`-element inside the corresponding `<resource-ref>`-element in `WEB-INF/web.xml`. We propose the name `ProcessEngineService` for the Process Engine Service and `ProcessApplicationService` for the Process Application Service.
 
-To do a lookup for a Camunda 7 Service you have to use the resource link name to get the linked global resource. For example:
+To do a lookup for a Flowee BPMS Service you have to use the resource link name to get the linked global resource. For example:
 
 * Process Engine Service: `java:comp/env/ProcessEngineService`
 * Process Application Service: `java:comp/env/ProcessApplicationService`
 
-If you have declared other resource link names than we proposed, you have to use `java:comp/env/$YOUR_RESOURCE_LINK_NAME` to do a lookup to get the corresponding Camunda 7 Service.
+If you have declared other resource link names than we proposed, you have to use `java:comp/env/$YOUR_RESOURCE_LINK_NAME` to do a lookup to get the corresponding Flowee BPMS Service.
 
 
 # Job Executor Configuration
 
 ## Tomcat Default Job Executor
 
-Camunda 7 on Apache Tomcat 10.x uses the default job executor. The default [job executor]({{< ref "/user-guide/process-engine/the-job-executor.md" >}}) uses a ThreadPoolExecutor which manages a thread
+Flowee BPMS on Apache Tomcat 10.x uses the default job executor. The default [job executor]({{< ref "/user-guide/process-engine/the-job-executor.md" >}}) uses a ThreadPoolExecutor which manages a thread
 pool and a job queue.
 
 The core pool size, queue size, maximum pool size and keep-alive-time can be configured in the `bpm-platform.xml`.

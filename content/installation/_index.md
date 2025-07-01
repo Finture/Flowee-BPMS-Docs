@@ -1,6 +1,6 @@
 ---
 
-title: "Install Camunda 7"
+title: "Install Flowee BPMS"
 weight: 40
 
 menu:

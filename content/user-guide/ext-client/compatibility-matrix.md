@@ -11,13 +11,13 @@ menu:
 
 ---
 
-Each version of Camunda 7 is bound to a specific version of the **External Task Clients**.
+Each version of Flowee BPMS is bound to a specific version of the **External Task Clients**.
 
-  Camunda 7 and its compatible **Java** External Task Client always share the same version.
+  Flowee BPMS and its compatible **Java** External Task Client always share the same version.
 
 <table class="table table-striped">
   <tr>
-    <th>Camunda 7 version</th>
+    <th>Flowee BPMS version</th>
     <th>NodeJS client</th>
   </tr>
   <tr>
@@ -59,4 +59,4 @@ Each version of Camunda 7 is bound to a specific version of the **External Task 
 </table>
 
 Only these default combinations are recommended (and supported) by Camunda. Nevertheless, each version of the External
-Task Clients can be combined with newer patch versions of the Camunda 7 Workflow Engine.
+Task Clients can be combined with newer patch versions of the Flowee BPMS Workflow Engine.

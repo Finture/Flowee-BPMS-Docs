@@ -21,14 +21,14 @@ This document guides you through the update from Camunda `7.4.x` to `7.5.0`. It 
 2. For administrators: [Updating a Tasklist Translation File]({{< relref "#tasklist-translation-file" >}})
 3. For administrators and developers: [Application with Embedded Process Engine Update]({{< relref "#application-with-embedded-process-engine" >}})
 
-This guide covers mandatory migration steps as well as optional considerations for initial configuration of new functionality included in Camunda 7.5.
+This guide covers mandatory migration steps as well as optional considerations for initial configuration of new functionality included in Flowee BPMS.5.
 
 Noteworthy new Features and Changes in 7.5:
 
-* **Multi-Tenancy:** In addition to the existing approach for [multi-tenancy]({{< ref "/user-guide/process-engine/multi-tenancy.md" >}}) with multiple process engines and database, schema or table isolation, Camunda 7.5 offers a new approach using a single process engine. The engine stores the data of all tenants in one table and separates them by a tenant-identifier which makes it easier to manage a large tenant base.
+* **Multi-Tenancy:** In addition to the existing approach for [multi-tenancy]({{< ref "/user-guide/process-engine/multi-tenancy.md" >}}) with multiple process engines and database, schema or table isolation, Flowee BPMS.5 offers a new approach using a single process engine. The engine stores the data of all tenants in one table and separates them by a tenant-identifier which makes it easier to manage a large tenant base.
 
 {{< note title="No Rolling Updates" class="warning" >}}
-It is not possible to migrate process engines from Camunda 7.4 to 7.5 in a rolling fashion. This means, it is not possible to run process engines of version 7.4 and 7.5 in parallel with the same database configuration. The reason is that a 7.4 engine may not be able to execute process instances that have been previously executed by a 7.5 engine, as these may use features that were not available yet in 7.4.
+It is not possible to migrate process engines from Flowee BPMS.4 to 7.5 in a rolling fashion. This means, it is not possible to run process engines of version 7.4 and 7.5 in parallel with the same database configuration. The reason is that a 7.4 engine may not be able to execute process instances that have been previously executed by a 7.5 engine, as these may use features that were not available yet in 7.4.
 {{< /note >}}
 
 # Database Updates
@@ -48,7 +48,7 @@ Every Camunda installation requires a database schema update.
 
     The scripts update the database from one minor version to the next one and change the underlying database structure, so make sure to backup your database in case there are any failures during the update process.
 
-3. We highly recommend to also check for any existing patch scripts for your database that are within the bounds of the new minor version you are updating to. Execute them in ascending order by version number. _Attention_: This step is only relevant when you are using an enterprise version of Camunda 7, e.g., `7.5.X` where `X > 0`. The procedure is the same as in step 1, only for the new minor version.
+3. We highly recommend to also check for any existing patch scripts for your database that are within the bounds of the new minor version you are updating to. Execute them in ascending order by version number. _Attention_: This step is only relevant when you are using an enterprise version of Flowee BPMS, e.g., `7.5.X` where `X > 0`. The procedure is the same as in step 1, only for the new minor version.
 
 ## Special Considerations
 
@@ -58,7 +58,7 @@ Since 7.5.0 there are separate SQL scripts for MariaDB. If you use MariaDB and u
 
 ### Wildfly 10
 
-The pre-built Camunda 7.5 distribution ships with Wildfly 8 and in addition with Wildfly 10, whereas 7.4 comes just with Wildfly 8. In particular, Camunda 7.5 is supported on Wildfly 8.2 and 10.1 such that a Wildfly update is not required when migrating from 7.4 to 7.5.
+The pre-built Flowee BPMS.5 distribution ships with Wildfly 8 and in addition with Wildfly 10, whereas 7.4 comes just with Wildfly 8. In particular, Flowee BPMS.5 is supported on Wildfly 8.2 and 10.1 such that a Wildfly update is not required when migrating from 7.4 to 7.5.
 
 ### Oracle WebLogic Server 12c R2
 
@@ -73,7 +73,7 @@ The following steps are required:
 1. Update Camunda Libraries and Applications inside the application server
 2. Migrate custom Process Applications
 
-Before starting, make sure that you have downloaded the Camunda 7.5 distribution for the application server you use. It contains the SQL scripts and libraries required for update. This guide assumes you have unpacked the distribution to a path named `$DISTRIBUTION_PATH`.
+Before starting, make sure that you have downloaded the Flowee BPMS.5 distribution for the application server you use. It contains the SQL scripts and libraries required for update. This guide assumes you have unpacked the distribution to a path named `$DISTRIBUTION_PATH`.
 
 ## Camunda Libraries and Applications
 

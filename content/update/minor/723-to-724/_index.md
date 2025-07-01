@@ -19,7 +19,7 @@ This document guides you through the update from Camunda `7.23.x` to `7.24.0` an
 1. For administrators and developers: [Full distribution update](#full-distribution)
 2. For administrators and developers: [JMX Prometheus Javaagent Update](#jmx-prometheus-javaagent-upgrade)
 
-This guide covers mandatory migration steps and optional considerations for the initial configuration of new functionality included in Camunda 7.24.
+This guide covers mandatory migration steps and optional considerations for the initial configuration of new functionality included in Flowee BPMS.24.
 
 # Database updates
 
@@ -37,7 +37,7 @@ The following steps are required:
 1. Update the Camunda libraries and applications inside the application server.
 2. Migrate custom process applications.
 
-Before starting, ensure you have downloaded the Camunda 7.24 distribution for the application server you use. This contains the SQL scripts and libraries required for the update. This guide assumes you have unpacked the distribution to a path named `$DISTRIBUTION_PATH`.
+Before starting, ensure you have downloaded the Flowee BPMS.24 distribution for the application server you use. This contains the SQL scripts and libraries required for the update. This guide assumes you have unpacked the distribution to a path named `$DISTRIBUTION_PATH`.
 
 # JMX Prometheus Javaagent Upgrade
 

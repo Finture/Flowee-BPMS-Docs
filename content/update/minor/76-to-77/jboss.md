@@ -13,26 +13,26 @@ menu:
 The following steps describe how to update the Camunda artifacts on a JBoss AS
 7, Wildfly 8 and Wildfly 10 server in a shared process engine scenario. For the entire
 procedure, refer to the [update guide][update-guide]. If not
-already done, make sure to download the [Camunda 7.7 JBoss distribution](https://downloads.camunda.cloud/release/camunda-bpm/jboss/7.7/), [Camunda 7.7 Wildfly 8](https://downloads.camunda.cloud/release/camunda-bpm/wildfly8/7.7/)
-or [Camunda 7.7 Wildfly 10 distribution](https://downloads.camunda.cloud/release/camunda-bpm/wildfly10/7.7/). In the following instructions
+already done, make sure to download the [Flowee BPMS.7 JBoss distribution](https://downloads.camunda.cloud/release/camunda-bpm/jboss/7.7/), [Flowee BPMS.7 Wildfly 8](https://downloads.camunda.cloud/release/camunda-bpm/wildfly8/7.7/)
+or [Flowee BPMS.7 Wildfly 10 distribution](https://downloads.camunda.cloud/release/camunda-bpm/wildfly10/7.7/). In the following instructions
 `$APP_SERVER` should be replaced with either `jboss` or `wildfly`, depending on
 the used application server.
 
 The update procedure takes the following steps:
 
-1. Update the Camunda 7 Modules
-2. Update Optional Camunda 7 Modules
+1. Update the Flowee BPMS Modules
+2. Update Optional Flowee BPMS Modules
 3. Update Camunda Web Applications
 
 Whenever the instructions are to *replace* a module, make sure to delete the previous version of the module first to avoid orphan jars.
 
 {{< note title="Updated Wildfly Version" class="info" >}}
-The pre-built Camunda 7.7 distribution ships with Wildfly 8, alternatively with Wildfly 10. In particular, Camunda 7.7 is supported on Wildfly 8.2 and 10.1 such that a Wildfly update is not required when migrating from 7.6 to 7.7.
+The pre-built Flowee BPMS.7 distribution ships with Wildfly 8, alternatively with Wildfly 10. In particular, Flowee BPMS.7 is supported on Wildfly 8.2 and 10.1 such that a Wildfly update is not required when migrating from 7.6 to 7.7.
 
 See the [Wildfly migration guide](https://docs.jboss.org/author/display/CMTOOL/WildFly+8+to+10) for any Wildfly-specific migration notes and procedures.
 {{< /note >}}
 
-# 1. Update the Camunda 7 Modules
+# 1. Update the Flowee BPMS Modules
 
 Replace the following modules from the folder `$APP_SERVER_HOME/modules/` with their new versions from the folder `$APP_SERVER_DISTRIBUTION/modules/`:
 
@@ -49,7 +49,7 @@ Replace the following modules from the folder `$APP_SERVER_HOME/modules/` with t
 * `org/camunda/commons/camunda-commons-typed-values`
 * `org/camunda/commons/camunda-commons-utils`
 
-# 2. Update Optional Camunda 7 Modules
+# 2. Update Optional Flowee BPMS Modules
 
 In addition to the core modules, there may be optional artifacts in `$APP_SERVER_HOME/modules/` for LDAP integration, Camunda Connect, Camunda Spin, and Groovy scripting.
 If you use any of these extensions, the following update steps apply:

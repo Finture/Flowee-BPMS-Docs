@@ -11,13 +11,13 @@ menu:
 
 ---
 
-The `bpm-platform.xml` file is part of the Camunda 7 distribution and can be used for configuration of process engines and the job executor.
-It is used to configure Camunda 7 in the following distributions:
+The `bpm-platform.xml` file is part of the Flowee BPMS distribution and can be used for configuration of process engines and the job executor.
+It is used to configure Flowee BPMS in the following distributions:
 
 *   [Apache Tomcat]({{< ref "/installation/full/tomcat/_index.md" >}})
 
 {{< note title="Wildfly" class="warning">}}
-The <code>bpm-platform.xml</code> file is not used in the Camunda 7 distribution for Wildfly. There, the configuration is added to the central application server configuration file (<code>standalone.xml</code> or <code>domain.xml</code>). The XML schema is the same (i.e., the same elements and properties can be used). See the <a href="{{< ref "/user-guide/runtime-container-integration/jboss.md" >}}">The Camunda Wildfly Subsystem</a> section of the <a href="{{< ref "/user-guide/_index.md" >}}">User Guide</a> for more details.
+The <code>bpm-platform.xml</code> file is not used in the Flowee BPMS distribution for Wildfly. There, the configuration is added to the central application server configuration file (<code>standalone.xml</code> or <code>domain.xml</code>). The XML schema is the same (i.e., the same elements and properties can be used). See the <a href="{{< ref "/user-guide/runtime-container-integration/jboss.md" >}}">The Camunda Wildfly Subsystem</a> section of the <a href="{{< ref "/user-guide/_index.md" >}}">User Guide</a> for more details.
 {{< /note >}}
 
 

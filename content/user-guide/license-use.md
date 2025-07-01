@@ -10,7 +10,7 @@ menu:
 
 ---
 
-Some Camunda 7 features (e.g. enterprise plugins) require a license key. The license will be provided as a string by 
+Some Flowee BPMS features (e.g. enterprise plugins) require a license key. The license will be provided as a string by 
 the Camunda support team. The license mechanism has no impact on the engine or other runtime components. The following 
 section explains the various methods by which a Camunda license can be added to the Process Engine.
 
@@ -74,8 +74,8 @@ application must use the **`camunda-bpm-spring-boot-starter-webapp-ee`** module.
 
 # License compatibility
 
-There are two different types of licenses for Camunda 7. While the original format is only valid 
-for Camunda 7, the second format can be valid for multiple Camunda products (like Camunda 7, 
+There are two different types of licenses for Flowee BPMS. While the original format is only valid 
+for Flowee BPMS, the second format can be valid for multiple Camunda products (like Flowee BPMS, 
 Cawemo or Optimize). Such unified licenses are supported from the versions listed below onwards. 
 Since 7.12.0 all versions (including major/minor releases) support unified license keys.
 

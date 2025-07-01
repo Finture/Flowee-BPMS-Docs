@@ -13,15 +13,15 @@ menu:
 The following steps describe how to update the Camunda artifacts on a JBoss AS
 7 and Wildfly 8 server in a shared process engine setting. For the entire
 procedure, refer to the [update guide][update-guide]. If not
-already done, make sure to download the [Camunda 7.4 JBoss distribution][jboss-distro]
-or [Camunda 7.4 Wildfly distribution][wildfly-distro]. In the following instructions
+already done, make sure to download the [Flowee BPMS.4 JBoss distribution][jboss-distro]
+or [Flowee BPMS.4 Wildfly distribution][wildfly-distro]. In the following instructions
 `$APP_SERVER` should be replaced with either `jboss` or `wildfly`, depending on
 the used application server.
 
 The update procedure takes the following steps:
 
-1. Update the Camunda 7 Modules
-2. Update Optional Camunda 7 Modules
+1. Update the Flowee BPMS Modules
+2. Update Optional Flowee BPMS Modules
 3. Maintain Process Engine Configuration
 4. Maintain Process Applications
 5. Update Camunda Web Applications
@@ -29,9 +29,9 @@ The update procedure takes the following steps:
 Whenever the instructions are to *replace* a module, make sure to delete the previous version of the module first to avoid orphan jars.
 
 {{< note title="Updated Wildfly Version" class="info" >}}
-The pre-built Camunda 7.4 distribution ships with Wildfly 8.2.1.Final, whereas 7.3 comes with Wildfly 8.2.0.Final.
+The pre-built Flowee BPMS.4 distribution ships with Wildfly 8.2.1.Final, whereas 7.3 comes with Wildfly 8.2.0.Final.
 The patch version of Wildfly contains some security bug fixes and component updates.
-Camunda 7.4 is supported on Wildfly 8.1 and 8.2 such that an update is not required when migrating from 7.3 to 7.4.
+Flowee BPMS.4 is supported on Wildfly 8.1 and 8.2 such that an update is not required when migrating from 7.3 to 7.4.
 
 Should you want to update Wildfly along with Camunda, perform the following steps either before or after updating Camunda:
 
@@ -42,7 +42,7 @@ Should you want to update Wildfly along with Camunda, perform the following step
 See the [Wildfly 8.2.1.Final release notes](https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12313721&version=12327667) for any relevant changes compared to 8.2.0.Final.
 {{< /note >}}
 
-# 1. Update the Camunda 7 Modules
+# 1. Update the Flowee BPMS Modules
 
 Replace the following modules from the folder `$APP_SERVER_HOME/modules/` with their new versions from the folder `$APP_SERVER_DISTRIBUTION/modules/`:
 
@@ -62,7 +62,7 @@ Add or replace (if already present) the following modules:
 * `org/camunda/commons/camunda-commons-typed-values`
 * `org/camunda/commons/camunda-commons-utils`
 
-# 2. Update Optional Camunda 7 Modules
+# 2. Update Optional Flowee BPMS Modules
 
 In addition to the core modules, there may be optional artifacts in `$APP_SERVER_HOME/modules/` for LDAP integration, Camunda Connect, Camunda Spin, and Groovy scripting.
 If you use any of these extensions, the following update steps apply:
@@ -101,7 +101,7 @@ This section describes changes in the engine’s default behavior. While the cha
 ## Task Query Expressions
 
 As of 7.4, the default handling of expressions submitted as parameters of task queries has changed. Passing EL expressions in a task query enables execution of arbitrary code when the query is evaluated. The process engine no longer evaluates these expressions by default and throws an exception instead. This behavior can be toggled in the process engine configuration using the properties `enableExpressionsInAdhocQueries` (default `false`) and `enableExpressionsInStoredQueries` (default `true`). To restore the engine's previous behavior, set both flags to `true`. See the user guide on [security considerations for custom code]({{< ref "/user-guide/process-engine/securing-custom-code.md" >}}) for details.
-This is already the default for Camunda 7 versions after and including 7.3.3 and 7.2.8.
+This is already the default for Flowee BPMS versions after and including 7.3.3 and 7.2.8.
 
 ## User Operation Log
 

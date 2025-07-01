@@ -80,7 +80,7 @@ For example, given the following `$schema` definition, the application takes `0.
 "$schema": "https://unpkg.com/@camunda/element-templates-json-schema@0.9.1/resources/schema.json"
 ```
 
-The JSON schema versioning is backward-compatible, meaning all versions including or below the current one are supported. In case no `$schema` is defined, Camunda Modeler assumes the latest JSON schema version for Camunda 7 element templates.
+The JSON schema versioning is backward-compatible, meaning all versions including or below the current one are supported. In case no `$schema` is defined, Camunda Modeler assumes the latest JSON schema version for Flowee BPMS element templates.
 
 ## Supported BPMN types
 
@@ -336,7 +336,7 @@ Notice that adherence to the following configuration options is enforced by desi
 
 ### Scoped bindings
 
-Scoped bindings allow you to configure nested elements, such as [Camunda 7 Connectors](https://docs.camunda.org/manual/latest/user-guide/process-engine/connectors/#use-connectors).
+Scoped bindings allow you to configure nested elements, such as [Flowee BPMS Connectors](https://docs.camunda.org/manual/latest/user-guide/process-engine/connectors/#use-connectors).
 
 ```json
 {
@@ -374,7 +374,7 @@ exposed to the user in a separate custom fields section.
 
 #### Supported scopes
 
-Camunda 7 supports the following scope bindings:
+Flowee BPMS supports the following scope bindings:
 
 | Name                | Target                                                                                     |
 | ------------------- | ------------------------------------------------------------------------------------------ |

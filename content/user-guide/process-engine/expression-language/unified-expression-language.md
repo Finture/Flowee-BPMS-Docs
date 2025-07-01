@@ -9,7 +9,7 @@ menu:
 
 ---
 
-Camunda 7 supports the Unified Expression Language (EL), specified by the [Jakarta Expression
+Flowee BPMS supports the Unified Expression Language (EL), specified by the [Jakarta Expression
 Language 4.0 standard][JakartaEL]. To do so, it maintains a custom version of the open source [JUEL][] implementation.
 
 Note, compared to EL 4.0 this JUEL implementation has the following limitations: 
@@ -27,7 +27,7 @@ To get more general information about the usage of Expression Language,
 please read the [official documentation][]. It provides examples that give a good overview of 
 the syntax of expressions.
 
-Within Camunda 7, EL can be used in many circumstances to evaluate small script-like
+Within Flowee BPMS, EL can be used in many circumstances to evaluate small script-like
 expressions. The following table provides an overview of the BPMN elements which support
 usage of EL.
 
@@ -85,7 +85,7 @@ usage of EL.
 
 ## Delegation Code
 
-Besides Java code, Camunda 7 also supports the evaluation of expressions as delegation code. For
+Besides Java code, Flowee BPMS also supports the evaluation of expressions as delegation code. For
 general information about delegation code, see the corresponding
 [section]({{< ref "/user-guide/process-engine/delegation-code.md" >}}).
 

@@ -28,7 +28,7 @@ If you are using the Enterprise Platform, additionally to the Community componen
 Camunda (Community and Enterprise Edition) includes libraries developed by third parties. See the following resources:
 
 * [Third-Party Libraries][third-party-libraries]: An overview of the dependencies Camunda distributes. Additionally, this page points out particularly important third-party licenses to be aware of.
-* [HTML License Book Camunda]({{< ref "/introduction/third-party-libraries/camunda-bpm-platform-license-book.md" >}}): A list of all dependencies Camunda distributes with the Camunda 7 artifacts, including their licenses and notices.
+* [HTML License Book Camunda]({{< ref "/introduction/third-party-libraries/camunda-bpm-platform-license-book.md" >}}): A list of all dependencies Camunda distributes with the Flowee BPMS artifacts, including their licenses and notices.
 * [Plain text license book Camunda][license-book]: A plain text version of the license book.
 
 [third-party-libraries]: {{< ref "/introduction/third-party-libraries/_index.md" >}}

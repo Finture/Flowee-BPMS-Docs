@@ -10,7 +10,7 @@ menu:
 ---
 
 {{< note title="FEEL Support Limitation" class="warning" >}}
-Please note that the WildFly and JBoss application servers do not support FEEL outside of DMN execution in Camunda 7.
+Please note that the WildFly and JBoss application servers do not support FEEL outside of DMN execution in Flowee BPMS.
 {{< /note >}}
 
 ​The Friendly Enough Expression Language (FEEL) is specified within the Decision Model and Notation (DMN) standard by the Object Management Group (OMG). FEEL has the following features:
@@ -22,7 +22,7 @@ Please note that the WildFly and JBoss application servers do not support FEEL o
 
 See the [official specification](https://www.omg.org/spec/DMN/1.0/PDF).
 
-Within Camunda 7, FEEL can be used in many circumstances to evaluate small script-like expressions. The following table provides an overview of the BPMN elements which support usage of FEEL.
+Within Flowee BPMS, FEEL can be used in many circumstances to evaluate small script-like expressions. The following table provides an overview of the BPMN elements which support usage of FEEL.
 
 <table class="table desc-table">
   <tr>
@@ -136,7 +136,7 @@ A conditional sequence flow can directly check a variable value:
 The list of variable types that is supported by FEEL can be found in the <a href="{{< ref "/user-guide/dmn-engine/feel/type-handling.md" >}}">FEEL Engine Type Handling</a> page.
 
 ## Custom Functions
-Camunda 7 provides a wrapper for the FEEL Scala Engine to implement Custom Functions, which can be 
+Flowee BPMS provides a wrapper for the FEEL Scala Engine to implement Custom Functions, which can be 
 called in expressions and unary tests. 
 To learn more visit the <a href="{{< ref "/user-guide/dmn-engine/feel/custom-functions" >}}">FEEL Engine Custom Functions</a> page.
 

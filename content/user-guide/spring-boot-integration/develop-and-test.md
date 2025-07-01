@@ -93,14 +93,14 @@ Here, the `camunda.bpm.process-engine-name=foo` will set (a unique name) "foo" a
 
 ## Camunda Assertions
 
-The [Camunda 7 Assertions]({{< ref 
+The [Flowee BPMS Assertions]({{< ref 
 "/user-guide/testing/_index.md#camunda-assertions" >}}) library is 
 integrated with the Camunda Spring Boot Starter in
 order to make testing processes in your Spring Boot application easier.
 
 ### Using Assertions with Context Caching
 
-Out of the box, the Camunda 7 Assertions library tries to use the
+Out of the box, the Flowee BPMS Assertions library tries to use the
 default engine or the (single) one that is available. Since when using
 Context Caching multiple engines are used in different contexts, binding
 the correct Process Engine to the Camunda Assertions library is required

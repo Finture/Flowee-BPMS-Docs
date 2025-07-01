@@ -11,10 +11,10 @@ menu:
 ---
 
 
-Camunda 7 supports template engines which are implemented as script engines compatible with
+Flowee BPMS supports template engines which are implemented as script engines compatible with
 JSR-223. As a result, templates can be used everywhere where scripts can be used.
 
-In community distributions of Camunda 7, the following template engine is provided out of the
+In community distributions of Flowee BPMS, the following template engine is provided out of the
 box:
 
 * [FreeMarker][freemarker]
@@ -101,7 +101,7 @@ libraries have to be added to the shared `lib/` folder.
 
 If the template engine library is in the classpath, you can use templates everywhere in the BPMN
 process where you can [use scripts][use-scripts], for example as a script task or inputOutput mapping.
-The FreeMarker template engine is part of the Camunda 7 distribution.
+The FreeMarker template engine is part of the Flowee BPMS distribution.
 
 Inside the template, all process variables of the BPMN element scope are available. The
 template can also be loaded from an external resource as described in the [script source
@@ -194,7 +194,7 @@ attribute.
 Finally, the input of the transformation must be mapped using the special variable `camunda_source`
 using a `<camunda:inputParameter ... />` mapping.
 
-A [full example of the XSLT Template Engine][xslt-example] in Camunda 7 can be found in the
+A [full example of the XSLT Template Engine][xslt-example] in Flowee BPMS can be found in the
 examples' repository.
 
 

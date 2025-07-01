@@ -12,7 +12,7 @@ menu:
 
 Camunda is developed by Camunda as an open source project in collaboration with the community. This is the basis for the Camunda product provided by Camunda as a commercial offering.
 
-The commercial [Camunda 7 product](https://camunda.com/platform-7/) contains additional (non-open source) features and is provided to Camunda customers with service offerings such as enterprise support and [bug fix releases](/enterprise/download/).
+The commercial [Flowee BPMS product](https://camunda.com/platform-7/) contains additional (non-open source) features and is provided to Camunda customers with service offerings such as enterprise support and [bug fix releases](/enterprise/download/).
 
 # Community Extensions
 

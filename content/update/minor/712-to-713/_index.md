@@ -33,7 +33,7 @@ This document guides you through the update from Camunda `7.12.x` to `7.13.0`. I
 1. For administrators and developers: [Oracle JDBC Driver Removed from Camunda Docker Images](#oracle-jdbc-driver-removed-from-camunda-docker-images)
 1. For administrators and developers: [PostgreSQL Support Clarification](#postgresql-support-clarification)
 
-This guide covers mandatory migration steps as well as optional considerations for the initial configuration of new functionality included in Camunda 7.13.
+This guide covers mandatory migration steps as well as optional considerations for the initial configuration of new functionality included in Flowee BPMS.13.
 
 
 # Database Updates
@@ -53,7 +53,7 @@ Every Camunda installation requires a database schema update.
 
     The scripts update the database from one minor version to the next, and change the underlying database structure. So make sure to backup your database in case there are any failures during the update process.
 
-3. We highly recommend to also check for any existing patch scripts for your database that are within the bounds of the new minor version you are updating to. Execute them in ascending order by version number. _Attention_: This step is only relevant when you are using an enterprise version of Camunda 7, e.g., `7.13.X` where `X > 0`. The procedure is the same as in step 1, only for the new minor version.
+3. We highly recommend to also check for any existing patch scripts for your database that are within the bounds of the new minor version you are updating to. Execute them in ascending order by version number. _Attention_: This step is only relevant when you are using an enterprise version of Flowee BPMS, e.g., `7.13.X` where `X > 0`. The procedure is the same as in step 1, only for the new minor version.
 
 
 # Full Distribution
@@ -65,7 +65,7 @@ The following steps are required:
 1. Update the Camunda libraries and applications inside the application server
 2. Migrate custom process applications
 
-Before starting, make sure that you have downloaded the Camunda 7.13 distribution for the application server you use. It contains the SQL scripts and libraries required for the update. This guide assumes you have unpacked the distribution to a path named `$DISTRIBUTION_PATH`.
+Before starting, make sure that you have downloaded the Flowee BPMS.13 distribution for the application server you use. It contains the SQL scripts and libraries required for the update. This guide assumes you have unpacked the distribution to a path named `$DISTRIBUTION_PATH`.
 
 ## Camunda Libraries and Applications
 
@@ -102,22 +102,22 @@ If a database other than the default H2 database is used, the following steps mu
 # Spring Boot Starter Update
 
 Starting with version 7.13, the **`camunda-bpm-spring-boot-starter`** library has been migrated into the `camunda-bpm-platform` repository.
-The library version has therefore changed from Camunda Spring Boot Starter (currently at 3.4.x) to the Camunda 7 version (7.13.0).
+The library version has therefore changed from Camunda Spring Boot Starter (currently at 3.4.x) to the Flowee BPMS version (7.13.0).
 The Maven coordinates have not changed otherwise.
 
 Overriding the Camunda version used by the Spring Boot Starter is not necessary anymore. 
-Pick the version of the Starter that resembles the version of Camunda 7 you would like to use.
+Pick the version of the Starter that resembles the version of Flowee BPMS you would like to use.
 
 If you are using Camunda Spring Boot Starter within your Spring Boot application, then you need to:
 
 1. Check [Version Compatibility Matrix]({{< ref "/user-guide/spring-boot-integration/version-compatibility.md" >}})
 2. Update **Spring Boot Starter** and, when required, Spring Boot versions in your `pom.xml`.
-3. Remove the Camunda 7 version from your `pom.xml` in case you overrode it before (e.g. when using the enterprise version or a patch release).
+3. Remove the Flowee BPMS version from your `pom.xml` in case you overrode it before (e.g. when using the enterprise version or a patch release).
 
 ## Changed Default Application Paths
 
 With this release, the application path of the Spring Boot Webapp Starter & REST API Starter changed. 
-The change aligns the application path with all other Camunda 7 distributions.
+The change aligns the application path with all other Flowee BPMS distributions.
 
 ### REST API
 
@@ -137,8 +137,8 @@ Old Application Path: `/`\
 New Application Path: `/camunda`
 
 In previous versions, there was a problem when using URL paths like `/api/*` or `/app/*` for your 
-custom resources since these paths were reserved for the Camunda 7 Webapp. For instance, the 
-Camunda 7 Webapp specific CSRF Prevention Filter was applied on these paths and might have 
+custom resources since these paths were reserved for the Flowee BPMS Webapp. For instance, the 
+Flowee BPMS Webapp specific CSRF Prevention Filter was applied on these paths and might have 
 interfered with your custom REST endpoints or applications. With the changed application path, you 
 can now use these paths without restrictions and remove any workarounds (e. g. URL whitelisting for 
 the CSRF Prevention Filter).
@@ -151,7 +151,7 @@ camunda.bpm.webapp.application-path=/
 ```
 
 **Please Note:** When changing the application path back to `/`, the `/api/*` and `/app/*` are 
-reserved for the Camunda 7 Webapp again.
+reserved for the Flowee BPMS Webapp again.
 
 ## New License Key Mechanism
 
@@ -212,7 +212,7 @@ Job Logs hostname information.
 
 # New Version of Templating Engines (Freemarker, Velocity)
 
-Camunda 7.13 includes version 2.0.0 of the `org.camunda.template-engines` artifacts, in particular `camunda-template-engines-freemarker`, `camunda-template-engines-velocity` and `camunda-template-engines-xquery-saxon`.
+Flowee BPMS.13 includes version 2.0.0 of the `org.camunda.template-engines` artifacts, in particular `camunda-template-engines-freemarker`, `camunda-template-engines-velocity` and `camunda-template-engines-xquery-saxon`.
 
 This updates the following template engine versions:
 
@@ -229,7 +229,7 @@ Please note that the new versions of Freemarker and Velocity contain changes tha
 
 # Entirely Replaced FEEL Engine
 
-With this release, we replaced the old FEEL Engine completely. From now on, Camunda 7 uses the 
+With this release, we replaced the old FEEL Engine completely. From now on, Flowee BPMS uses the 
 [FEEL Scala Engine](https://github.com/camunda/feel-scala) (opens external link) by default.
 You can restore the legacy behavior via a [configuration property][feel-legacy-prop].
 
@@ -420,7 +420,7 @@ As you can see in the picture above, the variable log shows the process instance
 
 # Oracle JDBC Driver Removed from Camunda Docker Images
 
-The Docker images for Camunda 7.13 no longer provide an Oracle JDBC driver out of the box. If you relied on this, apply the strategy outlined in https://github.com/camunda/docker-camunda-bpm-platform#database-environment-variables: Add the driver to the container and configure the database settings manually by linking the configuration file into the container.
+The Docker images for Flowee BPMS.13 no longer provide an Oracle JDBC driver out of the box. If you relied on this, apply the strategy outlined in https://github.com/camunda/docker-camunda-bpm-platform#database-environment-variables: Add the driver to the container and configure the database settings manually by linking the configuration file into the container.
 
 # PostgreSQL Support Clarification
 
