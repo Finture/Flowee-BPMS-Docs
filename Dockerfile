@@ -22,4 +22,4 @@ COPY . .
 EXPOSE 1313
 
 # Uruchom dokumentację
-CMD ["hugo", "server", "--baseURL=http://localhost:8080", "--bind=0.0.0.0", "--appendPort=false"]
+CMD ["hugo", "server", "--baseURL=http://localhost", "--bind=0.0.0.0"]
