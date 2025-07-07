@@ -19,7 +19,7 @@ WORKDIR /docs
 COPY . .
 
 # Otwórz port Hugo
-EXPOSE 1313
+EXPOSE 80
 
 # Uruchom dokumentację
-CMD ["hugo", "server", "--baseURL=http://localhost", "--bind=0.0.0.0"]
+CMD ["hugo", "server", "--baseURL=http://modeler.flowee.local/docs/", "--bind=0.0.0.0", "--port=80"]
