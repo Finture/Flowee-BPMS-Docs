@@ -1,5 +1,4 @@
-# Etap 1: Budowanie Hugo
-FROM alpine:3.18 AS builder
+FROM alpine:3.18
 
 RUN apk add --no-cache curl tar
 
@@ -7,11 +6,11 @@ RUN curl -L -o /tmp/hugo.tar.gz https://github.com/gohugoio/hugo/releases/downlo
     tar -xzf /tmp/hugo.tar.gz -C /usr/local/bin hugo && \
     chmod +x /usr/local/bin/hugo
 
-WORKDIR /docs
-COPY . .
+WORKDIR /src
 
-RUN hugo --baseURL="/docs/"
+ENTRYPOINT ["hugo"]
 
-# Etap 2: Serwer statyczny NGINX
-FROM nginx:alpine
-COPY --from=builder /docs/public /usr/share/nginx/html/docs
+# docker build --platform=linux/amd64 -t hugo .
+# docker run --rm -v "$PWD:/src" hugo --baseURL=/docs
+
+scp public/* httpfiles@10.255.100.5:/var/www/html/bpms/docs/

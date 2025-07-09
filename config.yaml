@@ -1,27 +1,21 @@
 ---
-baseURL: "/manual/develop/"
+baseURL: "/"
 languageCode: "en-us"
 title: "Flowee BPMS documentation"
-theme: "camunda"
+theme: "flowee"
 
 blackfriday:
   plainIDAnchors: true
 
 params:
-  canonicalBasePath: "https://docs.camunda.org"
+  canonicalBasePath: "https://bpms.finture.com"
   sections:
     - id: "get-started"
       name: "Get Started"
       url: "/get-started"
     - id: "manual"
       name: "Flowee BPMS"
-      url: "/manual"
-    - id: "optimize"
-      name: "Optimize"
-      url: "/optimize"
-    - id: 'cawemo'
-      name: 'Cawemo'
-      url: '/cawemo'
+      url: "/"
     - id: "enterprise"
       name: "Enterprise"
       url: "/enterprise"
@@ -34,10 +28,9 @@ params:
     versionAlias: "0.7"
     versions:
       - "latest"
-      - "0.5"
       - "develop"
   github:
-    repositoryName: "camunda/camunda-docs-manual"
+    repositoryName: "flowee/flowee-bpms-docs-manual"
     branch: "master"
 
 outputs:
