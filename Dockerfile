@@ -12,5 +12,4 @@ ENTRYPOINT ["hugo"]
 
 # docker build --platform=linux/amd64 -t hugo .
 # docker run --rm -v "$PWD:/src" hugo --baseURL=/docs
-
-scp public/* httpfiles@10.255.100.5:/var/www/html/bpms/docs/
+# scp public/* httpfiles@10.255.100.5:/var/www/html/bpms/docs/
