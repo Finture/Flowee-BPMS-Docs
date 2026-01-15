@@ -6,10 +6,10 @@ layout: "single"
 
 menu:
   main:
-    name: "Camunda 7.23 to Flowee BPMS 0.7"
+    name: "Camunda 7.24 to Flowee BPMS 1.0.0"
     identifier: "migration-guide-07"
     parent: "migration-guide"
-    pre: "Update from `7.23.x` to `0.7.x`."
+    pre: "Update from `7.24.x` to `1.0.x`."
 
 ---
 
@@ -50,12 +50,12 @@ If you are using Maven, update your `pom.xml` to include Flowee BPMS dependencie
 <dependency>
     <groupId>org.camunda.bpm</groupId>
     <artifactId>camunda-engine</artifactId>
-    <version>7.23.0</version>
+    <version>7.24.0</version>
 </dependency>
 <!-- After migration -->
 <dependency>
     <groupId>com.finture.bpm</groupId>
-    <artifactId>flowee-engine</artifactId>
-    <version>0.7</version>
+    <artifactId>flowee-bpms-engine</artifactId>
+    <version>1.0.0</version>
 </dependency>
 ```
