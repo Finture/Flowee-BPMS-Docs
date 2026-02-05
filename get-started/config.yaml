@@ -1,0 +1,41 @@
+---
+baseURL: "/get-started/"
+languageCode: "en-us"
+title: "Getting started with Flowee BPMS"
+theme: "flowee"
+
+blackfriday:
+  plainIDAnchors: true
+
+params:
+  canonicalBasePath: "https://bpms.finture.com"
+  sections:
+    - id: "get-started"
+      name: "Get Started"
+      url: "/get-started"
+    - id: "manual"
+      name: "Flowee BPMS"
+      url: "/"
+    - id: "enterprise"
+      name: "Enterprise"
+      url: "/enterprise"
+    - id: "security"
+      name: "Security"
+      url: "/security"
+  section:
+    id: "get-started"
+  github:
+    repositoryName: "flowee-bpms/flowee-docs-static"
+    branch: "master/get-started"
+
+outputs:
+  home:
+    - "HTML"
+    - "RSS"
+  section:
+    - "HTML"
+
+disableKinds:
+- taxonomy
+- taxonomyTerm
+...

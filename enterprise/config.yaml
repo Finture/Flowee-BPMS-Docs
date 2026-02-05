@@ -1,0 +1,38 @@
+---
+baseURL: "/enterprise/"
+languageCode: "en-us"
+title: "Flowee BPMS Enterprise"
+theme: "flowee"
+
+blackfriday:
+  plainIDAnchors: true
+
+params:
+  canonicalBasePath: "https://bpms.finture.com"
+  sections:
+    - id: "get-started"
+      name: "Get Started"
+      url: "/get-started"
+    - id: "manual"
+      name: "Flowee BPMS"
+      url: "/"
+    - id: "security"
+      name: "Security"
+      url: "/security"
+  section:
+    id: "enterprise"
+  github:
+    repositoryName: "flowee-bpms/flowee-docs-static"
+    branch: "master/enterprise"
+
+outputs:
+  home:
+    - "HTML"
+    - "RSS"
+  section:
+    - "HTML"
+
+disableKinds:
+- taxonomy
+- taxonomyTerm
+...
