@@ -67,4 +67,4 @@ jobs:
             ./sync_dir/ \
             --filter='P flowee-bpms-bpm-run.zip' \
             --filter='P flowee-bpms-bpm-run.tar.gz' \
-            ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/${{ secrets.SSH_HOST }}/bpms/
+            ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/${{ secrets.SSH_USER }}/bpms/
