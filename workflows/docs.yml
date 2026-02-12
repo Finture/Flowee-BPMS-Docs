@@ -3,7 +3,7 @@ name: Build & deploy Hugo docs
 on:
   push:
     branches:
-      - main
+      - test
   workflow_dispatch:
 
 jobs:
