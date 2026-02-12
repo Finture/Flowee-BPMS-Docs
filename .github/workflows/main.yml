@@ -53,16 +53,18 @@ jobs:
           ls -la sync_dir/security
           ls -la sync_dir/enterprise
 
-      # - name: Setup SSH
-      #   run: |
-      #     mkdir -p ~/.ssh
-      #     echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-      #     chmod 600 ~/.ssh/id_rsa
-      #     ssh-keyscan -p ${{ secrets.SSH_PORT || 22 }} ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -p ${{ secrets.SSH_PORT || 22 }} ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
-      # - name: Deploy Files
-      #   run: |
-      #     rsync -avz --delete \
-      #       -e "ssh -p ${{ secrets.SSH_PORT || 22 }}" \
-      #       ./public/ \
-      #       ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/${{ secrets.SSH_HOST }}/bpms/
+      - name: Deploy Files
+        run: |
+          rsync -avz --delete \
+            -e "ssh -p ${{ secrets.SSH_PORT || 22 }}" \
+            ./sync_dir/ \
+            --filter='P flowee-bpms-bpm-run.zip' \
+            --filter='P flowee-bpms-bpm-run.tar.gz' \
+            ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/${{ secrets.SSH_HOST }}/bpms/
