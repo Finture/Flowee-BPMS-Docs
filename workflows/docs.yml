@@ -1,0 +1,37 @@
+name: Build & deploy Hugo docs
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: [self-hosted, bpms]
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Build Hugo docker image
+        run: docker build --platform=linux/amd64 -t hugo .
+
+      - name: Generate docs - get-started
+        run: |
+          cd get-started
+          docker run --rm -v "$PWD:/src" hugo --baseURL=/get-started/
+
+      - name: Generate docs - security
+        run: |
+          cd security
+          docker run --rm -v "$PWD:/src" hugo --baseURL=/security/
+
+      - name: Generate docs - enterprise
+        run: |
+          cd enterprise
+          docker run --rm -v "$PWD:/src" hugo --baseURL=/enterprise/
+
+      - name: Generate docs - homepage
+        run: |
+          docker run --rm -v "$PWD:/src" hugo --baseURL=/
