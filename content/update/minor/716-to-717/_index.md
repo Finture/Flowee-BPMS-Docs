@@ -192,7 +192,7 @@ Flowee BPMS.17.0 supports H2 version 2.0 and drops support for H2 version 1.4. N
 When using Camunda with a file-persisted H2 database, this implies:
 
 * The H2 database must be migrated from version 1.4 to 2.0.
-* It is not possible to perform a [rolling update]({{< ref "/update/rolling-update.md" >}}) from Flowee BPMS.16 to 7.17.
+* It is not possible to perform a rolling update from Flowee BPMS.16 to 7.17.
 
 To migrate from 7.16 to 7.17, and from H2 1.4 to 2.0, follow these steps:
 

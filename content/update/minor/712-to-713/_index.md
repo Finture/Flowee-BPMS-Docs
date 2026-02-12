@@ -389,7 +389,6 @@ The seed job creation as well as the batch job creation in the seed job will tra
 [Execution Jobs]: {{< ref "/user-guide/process-engine/batch.md#execution-jobs" >}}
 [set-removal-time-batch]: {{< ref "/user-guide/process-engine/batch-operations.md#historic-batches" >}}
 [job-cluster]: {{< ref "/user-guide/process-engine/the-job-executor.md#job-execution-in-heterogeneous-clusters" >}}
-[Rolling Update scenario]: {{< ref "/update/rolling-update.md" >}}
 
 # Historic Process Instance Variables on Asynchronous Instantiation
 
