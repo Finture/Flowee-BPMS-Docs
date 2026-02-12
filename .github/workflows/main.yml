@@ -45,7 +45,13 @@ jobs:
           cp -r get-started/public sync_dir/get-started
           cp -r security/public sync_dir/security
           cp -r enterprise/public sync_dir/enterprise
+
+      - name: Verify sync dir structure
+        run: |
           ls -la sync_dir/
+          ls -la sync_dir/get-started
+          ls -la sync_dir/security
+          ls -la sync_dir/enterprise
 
       # - name: Setup SSH
       #   run: |
