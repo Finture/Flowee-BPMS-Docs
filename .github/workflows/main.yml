@@ -41,7 +41,7 @@ jobs:
           mkdir -p sync_dir/get-started
           mkdir -p sync_dir/security
           mkdir -p sync_dir/enterprise
-          cp -r public/ sync_dir/
+          cp -r public/* sync_dir/
           cp -r get-started/public sync_dir/get-started
           cp -r security/public sync_dir/security
           cp -r enterprise/public sync_dir/enterprise
