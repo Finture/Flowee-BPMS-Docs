@@ -1,0 +1,69 @@
+name: Build & deploy Hugo docs
+
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - closed
+
+jobs:
+  build-and-deploy:
+    runs-on: [self-hosted]
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Build Hugo docker image
+        run: docker build --platform=linux/amd64 -t hugo .
+
+      - name: Generate docs - get-started
+        run: |
+          cd get-started
+          docker run --rm -v "$PWD:/src" hugo --baseURL=/get-started/
+
+      - name: Generate docs - security
+        run: |
+          cd security
+          docker run --rm -v "$PWD:/src" hugo --baseURL=/security/
+
+      - name: Generate docs - enterprise
+        run: |
+          cd enterprise
+          docker run --rm -v "$PWD:/src" hugo --baseURL=/enterprise/
+
+      - name: Generate docs - homepage
+        run: |
+          docker run --rm -v "$PWD:/src" hugo --baseURL=/
+
+      - name: Prepare Files to sync
+        run: |
+          mkdir -p sync_dir/get-started
+          mkdir -p sync_dir/security
+          mkdir -p sync_dir/enterprise
+          cp -r public/* sync_dir/
+          cp -r get-started/public/* sync_dir/get-started
+          cp -r security/public/* sync_dir/security
+          cp -r enterprise/public/* sync_dir/enterprise
+
+      - name: Verify sync dir structure
+        run: |
+          ls -la sync_dir/
+          ls -la sync_dir/get-started
+          ls -la sync_dir/security
+          ls -la sync_dir/enterprise
+
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -p ${{ secrets.SSH_PORT || 22 }} ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Deploy Files
+        run: |
+          rsync -avz --delete \
+            -e "ssh -p ${{ secrets.SSH_PORT || 22 }}" \
+            ./sync_dir/ \
+            ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/${{ secrets.SSH_USER }}/bpms/

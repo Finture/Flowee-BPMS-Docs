@@ -6,10 +6,11 @@ RUN curl -L -o /tmp/hugo.tar.gz https://github.com/gohugoio/hugo/releases/downlo
     tar -xzf /tmp/hugo.tar.gz -C /usr/local/bin hugo && \
     chmod +x /usr/local/bin/hugo
 
+RUN adduser -D -u 1000 hugo
+
+USER 1000
+
 WORKDIR /src
 
 ENTRYPOINT ["hugo"]
 
-# docker build --platform=linux/amd64 -t hugo .
-# docker run --rm -v "$PWD:/src" hugo --baseURL=/docs
-# scp public/* httpfiles@10.255.100.5:/var/www/html/bpms/docs/
