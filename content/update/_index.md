@@ -12,4 +12,4 @@ menu:
 
 These documents provide instructions to update a Java Project or a Flowee BPMS installation to a new version.
 
-Depending on which update you want to perform, choose one of the following guides :
+Depending on which update you want to perform, choose one of the following guides:
