@@ -11,7 +11,7 @@ menu:
 ---
 
 
-Camunda provides a public API. This section covers the definition of the public API and backwards compatibility for version updates.
+Flowee BPMS provides a public API. This section covers the definition of the public API and backwards compatibility for version updates.
 
 
 # Definition of Public API
