@@ -1,11 +1,9 @@
 name: Build & deploy Hugo docs
 
 on:
-  pull_request:
+  push:
     branches:
       - main
-    types:
-      - closed
 
 jobs:
   build-and-deploy:
