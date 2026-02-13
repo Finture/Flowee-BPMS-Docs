@@ -1,10 +1,9 @@
 name: Build & deploy Hugo docs
 
 on:
-  push:
+  pull_request:
     branches:
-      - test
-  workflow_dispatch:
+      - main
 
 jobs:
   build-and-deploy:
@@ -65,6 +64,4 @@ jobs:
           rsync -avz --delete \
             -e "ssh -p ${{ secrets.SSH_PORT || 22 }}" \
             ./sync_dir/ \
-            --filter='P flowee-bpms-bpm-run.zip' \
-            --filter='P flowee-bpms-bpm-run.tar.gz' \
             ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/${{ secrets.SSH_USER }}/bpms/
