@@ -24,11 +24,10 @@ params:
       url: "/security"
   section:
     id: "manual"
-    version: "develop"
-    versionAlias: "0.7"
+    version: "latest"
+    versionAlias: "1.0.1"
     versions:
       - "latest"
-      - "develop"
   github:
     repositoryName: "flowee/flowee-bpms-docs-manual"
     branch: "master"
